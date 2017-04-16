@@ -1,0 +1,11 @@
+## wooyun精彩漏洞
+- [破解小恩爱](http://wooyun.tangscan.cn/static/bugs/wooyun-2016-0184368.html)
+- [闪电客户端](http://wooyun.tangscan.cn/static/bugs/wooyun-2016-0182994.html)
+- [NQSky设备漏洞](http://wooyun.tangscan.cn/static/bugs/wooyun-2016-0183074.html)
+- [时代邮件](http://wooyun.tangscan.cn/static/bugs/wooyun-2016-0182279.html)
+- ​[TurboGate漏洞集合](http://wooyun.tangscan.cn/static/bugs/wooyun-2016-0181424.html)!!!
+- [foxmail命令执行](http://wooyun.tangscan.cn/static/bugs/wooyun-2016-0180424.html)
+- [金山防火墙命令执行](http://wooyun.tangscan.cn/static/bugs/wooyun-2016-0180000.html)
+- [海康视频管理](http://wooyun.tangscan.cn/static/bugs/wooyun-2016-0180166.html)
+- [squid](http://wooyun.tangscan.cn/static/bugs/wooyun-2013-025343.html)
+- ​

